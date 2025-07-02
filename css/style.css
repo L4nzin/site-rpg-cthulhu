@@ -1,0 +1,316 @@
+/* css/style.css */
+
+/* --- Variáveis CSS (opcional, mas bom para organização) --- */
+:root {
+    --color-dark-blue: #0f1c2d; /* Quase preto, azulado escuro */
+    --color-medium-blue: #1c314a; /* Azul marinho escuro */
+    --color-light-gray: #d4d4d4; /* Cinza claro para texto */
+    --color-accent-gold: #c2a75d; /* Ouro envelhecido para detalhes */
+    --color-background-paper: #f0f0e8; /* Cor de papel antigo para seções */
+    --font-heading: 'Cinzel Decorative', serif; /* Fonte para títulos */
+    --font-body: 'Merriweather', serif; /* Fonte para corpo do texto */
+    --font-monospace: 'Cutive Mono', monospace; /* Fonte para códigos/monospaçada */
+}
+
+/* --- Importação de Fontes do Google Fonts (escolha as suas!) --- */
+/* Exemplo de fontes que combinam com o tema Lovecraft/Horror antigo */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Cutive+Mono&display=swap');
+
+
+/* --- Reset Básico e Estilos Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--color-light-gray);
+    background-color: var(--color-dark-blue);
+    min-height: 100vh; /* Garante que o body ocupa pelo menos a altura da tela */
+    display: flex;
+    flex-direction: column; /* Para footer fixo ou no final do conteúdo */
+}
+
+a {
+    color: var(--color-accent-gold);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-accent-gold);
+    margin-bottom: 0.8em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Sombra sutil nos títulos */
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.4em; }
+
+p {
+    margin-bottom: 1em;
+}
+
+ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 1em;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+/* --- Layout Principal --- */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--color-medium-blue);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    flex-grow: 1; /* Permite que o conteúdo principal ocupe espaço disponível */
+}
+
+/* --- Cabeçalho Geral --- */
+.main-header {
+    background-color: var(--color-dark-blue);
+    padding: 2.5em 0;
+    text-align: center;
+    border-bottom: 3px solid var(--color-accent-gold);
+}
+
+.header-content {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.main-header h1 {
+    color: white; /* Título principal em branco para contraste */
+    font-size: 3.5em;
+    margin-bottom: 0.2em;
+}
+
+.main-header p {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+}
+
+/* --- Navegação Principal --- */
+.main-nav {
+    background-color: var(--color-medium-blue);
+    padding: 1em 0;
+    border-bottom: 1px solid rgba(var(--color-accent-gold), 0.5);
+    text-align: center;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha em telas pequenas */
+}
+
+.main-nav li {
+    margin: 0 15px;
+}
+
+.main-nav a {
+    color: var(--color-light-gray);
+    font-family: var(--font-heading);
+    font-size: 1.1em;
+    padding: 0.5em 0;
+    display: block;
+    border-bottom: 2px solid transparent; /* Para efeito hover */
+}
+
+.main-nav a:hover {
+    color: var(--color-accent-gold);
+    text-decoration: none;
+    border-bottom-color: var(--color-accent-gold);
+}
+
+/* --- Botões --- */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-family: var(--font-heading);
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-accent-gold);
+    color: var(--color-dark-blue);
+    border: 2px solid var(--color-accent-gold);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--color-accent-gold);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-accent-gold);
+    border: 2px solid var(--color-accent-gold);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-accent-gold);
+    color: var(--color-dark-blue);
+}
+
+/* --- Rodapé Geral --- */
+.main-footer {
+    background-color: var(--color-dark-blue);
+    color: rgba(var(--color-light-gray), 0.7);
+    text-align: center;
+    padding: 1.5em 0;
+    margin-top: auto; /* Empurra o rodapé para o final da página */
+    border-top: 2px solid var(--color-accent-gold);
+    font-size: 0.9em;
+}
+
+/* --- Seções de Conteúdo --- */
+.intro-section, .featured-content, .card-grid, .card, .gallery {
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: var(--color-background-paper); /* Fundo para seções de conteúdo */
+    color: #333; /* Texto mais escuro no fundo claro */
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(var(--color-accent-gold), 0.3);
+}
+
+.intro-section h2, .featured-content h2 {
+    color: var(--color-dark-blue); /* Títulos escuros no fundo claro */
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+/* --- Galeria de Imagens na Home --- */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    padding: 0; /* Remover padding padrão para fotos */
+    background-color: transparent; /* A galeria não tem fundo próprio */
+    box-shadow: none; /* Sem sombra para a galeria */
+    border: none;
+}
+
+.gallery img {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens */
+    object-fit: cover; /* Recorta para preencher o espaço */
+    border-radius: 5px;
+    border: 2px solid var(--color-accent-gold);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+}
+
+.quote {
+    font-style: italic;
+    text-align: center;
+    color: #555; /* Cor mais suave para citação */
+    margin-top: 30px;
+    padding: 15px;
+    border-left: 5px solid var(--color-accent-gold);
+    background-color: rgba(var(--color-accent-gold), 0.1);
+    border-radius: 0 5px 5px 0;
+}
+
+/* --- Grid de Cards (Destaques) --- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.card {
+    text-align: center;
+    padding: 25px;
+    background-color: var(--color-medium-blue); /* Fundo dos cards */
+    color: var(--color-light-gray);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(var(--color-accent-gold), 0.3);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--color-accent-gold);
+    margin-bottom: 0.5em;
+}
+
+.card p {
+    margin-bottom: 1.5em;
+}
+
+/* --- Media Queries para Responsividade --- */
+@media (max-width: 768px) {
+    .main-header h1 {
+        font-size: 2.5em;
+    }
+    .main-nav ul {
+        flex-direction: column;
+    }
+    .main-nav li {
+        margin: 5px 0;
+    }
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+    .intro-section, .featured-content, .card-grid, .card, .gallery {
+        padding: 15px;
+    }
+    .gallery img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header h1 {
+        font-size: 1.8em;
+    }
+    .main-header p {
+        font-size: 1em;
+    }
+    .btn-primary, .btn-secondary {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.5em; }
+}
