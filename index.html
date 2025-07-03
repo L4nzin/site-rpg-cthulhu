@@ -3,251 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criação de Investigador - Call of Cthulhu</title>
-    <link rel="stylesheet" href="../css/style.css"> <link rel="stylesheet" href="../css/ficha.css"> </head>
-<body>
-    <header>
-        <h1>Crie Seu Investigador para Call of Cthulhu</h1>
-        <p>Um guia passo a passo para dar vida ao seu personagem nesta campanha.</p>
+    <title>Call of Cthulhu: Campanha do Mistério Cósmico</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css"> </head>
+<body class="bg-dark text-light"> <header class="main-header bg-black py-5 text-center">
+        <div class="container">
+            <h1 class="display-4 text-white">O Chamado de Cthulhu: Um Mistério Cósmico</h1>
+            <p class="lead text-white-50">Prepare-se para enfrentar horrores indizíveis e a verdade por trás do véu da realidade.</p>
+            <a href="criar-investigador.html" class="btn btn-primary btn-lg mt-3">Crie Seu Investigador Agora</a>
+        </div>
     </header>
 
-    <nav class="sidebar">
-        <h2>Etapas da Criação</h2>
-        <ul>
-            <li><a href="#passo1">1. Ideia do Personagem</a></li>
-            <li><a href="#passo2">2. Atributos</a></li>
-            <li><a href="#passo3">3. Ocupação</a></li>
-            <li><a href="#passo4">4. Perícias</a></li>
-            <li><a href="#passo5">5. Equipamento e Dinheiro</a></li>
-            <li><a href="#passo6">6. Detalhes Pessoais</a></li>
-            <li><a href="#passo7">7. Finalização da Ficha</a></li>
-            <li><a href="#regras-opcionais">Regras Opcionais</a></li>
-            <li><a href="#dicas-guardiao">Dicas do Guardião</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand custom-brand" href="index.html">Cthulhu Campanha</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="criar-investigador.html">Criar Investigador</a></li>
+                    <li class="nav-item"><a class="nav-link" href="lore-e-relatorios.html">Lore e Relatórios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="historias-investigadores.html">Histórias dos Investigadores</a></li>
+                    <li class="nav-item"><a class="nav-link" href="regras-opcionais.html">Regras Opcionais</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <main class="content">
-        <section id="passo1" class="step-section">
-            <h2>1. Ideia do Personagem: Quem é Você?</h2>
-            <p>Antes de rolar os dados, pense na essência do seu investigador. Qual é o seu nome? O que ele fazia antes de se deparar com o inexplicável? De onde ele vem? Qual é a sua motivação?</p>
-            <ul>
-                <li>**Nome e Idade:** Escolha um nome que se encaixe na época e uma idade que faça sentido para sua história.</li>
-                <li>**Conceito:** É um detetive cético? Um professor universitário curioso? Um ex-soldado traumatizado?</li>
-                <li>**Traços de Personalidade:** Quais são suas virtudes e defeitos? O que o move?</li>
-            </ul>
-            <figure>
-                <img src="../imagens/ideia-personagem.jpg" alt="Ilustração de um investigador pensativo">
-                <figcaption>Dê vida ao seu personagem antes mesmo de rolar os dados.</figcaption>
-            </figure>
-        </section>
-
-        <section id="passo2" class="step-section">
-            <h2>2. Atributos: O que o Torna Único?</h2>
-            <p>Seus atributos representam as capacidades físicas e mentais básicas do seu investigador. Em Call of Cthulhu, eles são essenciais para determinar suas perícias e resistência.</p>
-            <h3>Rolagem de Dados</h3>
-            <p>Use o método de rolagem de dados padrão (3d6 para FOR, CON, POD, DES, APA; 2d6+6 para TAM, INT, EDU) ou o método de pontos de compra, se preferir. Os valores são multiplicados por 5 para se tornarem porcentagens para testes de perícia.</p>
-            
-            <div class="attribute-table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Atributo</th>
-                            <th>Rolagem Padrão (7ª Ed.)</th>
-                            <th>Multiplicador para Perícias</th>
-                            <th>Exemplo de Uso</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>**FOR** (Força)</td>
-                            <td>3d6 x 5</td>
-                            <td>x5</td>
-                            <td>Levantar objetos pesados, quebrar portas.</td>
-                        </tr>
-                        <tr>
-                            <td>**CON** (Constituição)</td>
-                            <td>3d6 x 5</td>
-                            <td>x5</td>
-                            <td>Resistência a doenças, venenos.</td>
-                        </tr>
-                        <tr>
-                            <td>**TAM** (Tamanho)</td>
-                            <td>2d6+6 x 5</td>
-                            <td>x5</td>
-                            <td>Determina PV, ajuda em testes de briga.</td>
-                        </tr>
-                        <tr>
-                            <td>**DES** (Destreza)</td>
-                            <td>3d6 x 5</td>
-                            <td>x5</td>
-                            <td>Agilidade, esquiva, pontaria.</td>
-                        </tr>
-                        <tr>
-                            <td>**APA** (Aparência)</td>
-                            <td>3d6 x 5</td>
-                            <td>x5</td>
-                            <td>Charme, persuasão.</td>
-                        </tr>
-                        <tr>
-                            <td>**INT** (Inteligência)</td>
-                            <td>2d6+6 x 5</td>
-                            <td>x5</td>
-                            <td>Raciocínio lógico, percepção.</td>
-                        </tr>
-                        <tr>
-                            <td>**POD** (Poder)</td>
-                            <td>3d6 x 5</td>
-                            <td>x5</td>
-                            <td>Força de vontade, sorte, resistência à Sanidade.</td>
-                        </tr>
-                        <tr>
-                            <td>**EDU** (Educação)</td>
-                            <td>2d6+6 x 5</td>
-                            <td>x5</td>
-                            <td>Conhecimento formal, cultura.</td>
-                        </tr>
-                    </tbody>
-                </table>
+    <main class="container my-5">
+        <section class="intro-section p-4 mb-4 bg-dark-secondary rounded shadow">
+            <h2 class="text-center mb-4 text-green">Bem-vindo ao Abismo da Loucura</h2>
+            <p>Esta campanha de Call of Cthulhu mergulhará vocês em um mundo onde a sanidade é uma moeda de troca e a verdade é mais aterrorizante que qualquer pesadelo. Inspirada nas obras de H.P. Lovecraft, vocês descobrirão segredos antigos e entidades além da compreensão humana.</p>
+            <div class="row g-3">
+                <div class="col-md-4"><img src="imagens/lovecraft-art-1.jpg" class="img-fluid rounded border border-green" alt="Arte inspirada em Cthulhu"></div>
+                <div class="col-md-4"><img src="imagens/lovecraft-art-2.jpg" class="img-fluid rounded border border-green" alt="Cena de horror cósmico"></div>
+                <div class="col-md-4"><img src="imagens/lovecraft-art-3.jpg" class="img-fluid rounded border border-green" alt="Antiga biblioteca arcana"></div>
             </div>
-
-            <h3>Pontos Derivados: PV, PM, SAN</h3>
-            <ul>
-                <li>**Pontos de Vida (PV):** (CON + TAM) / 10, arredondado para baixo.</li>
-                <li>**Pontos de Magia (PM):** POD / 5.</li>
-                <li>**Sanidade Inicial (SAN):** POD x 5.</li>
-            </ul>
-            <p class="note"><strong>Dica:</strong> Você pode usar uma ferramenta de rolagem de dados online ou um script JavaScript simples aqui para ajudar os jogadores a gerar esses números.</p>
+            <p class="quote text-center fst-italic mt-4 p-3 border-start border-green border-5 bg-dark-tertiary rounded">"A emoção mais antiga e mais forte da humanidade é o medo, e o tipo mais antigo e mais forte de medo é o medo do desconhecido." <br>— H.P. Lovecraft</p>
         </section>
 
-        <section id="passo3" class="step-section">
-            <h2>3. Ocupação: Seu Lugar no Mundo</h2>
-            <p>Sua ocupação define o que seu investigador fazia para viver antes de se envolver com os horrores cósmicos. Ela influencia suas perícias iniciais e seu dinheiro.</p>
-            <h3>Escolha Sua Profissão</h3>
-            <p>Abaixo, uma lista de ocupações comuns. Clique em cada uma para ver detalhes, perícias sugeridas e limite de crédito:</p>
-            <ul class="occupation-list">
-                <li><a href="ocupacoes/detetive.html">Detetive Particular</a></li>
-                <li><a href="ocupacoes/professor.html">Professor Universitário</a></li>
-                <li><a href="ocupacoes/jornalista.html">Jornalista</a></li>
-                <li><a href="ocupacoes/medico.html">Médico</a></li>
-                <li><a href="ocupacoes/antiquario.html">Antiquário</a></li>
-                </ul>
-            <p>Se sua ocupação não estiver listada, converse com o Guardião para criá-la.</p>
-        </section>
-
-        <section id="passo4" class="step-section">
-            <h2>4. Perícias: O que Você Sabe Fazer?</h2>
-            <p>Perícias representam o que seu investigador aprendeu e praticou. Elas são a base da maioria dos testes que você fará no jogo.</p>
-            <h3>Pontos de Perícia</h3>
-            <p>Você terá dois grupos de pontos para distribuir em suas perícias:</p>
-            <ul>
-                <li>**Pontos de Ocupação:** (EDU x 2) + (20 ou 40 pontos extras, dependendo da ocupação).</li>
-                <li>**Pontos de Interesse Pessoal:** INT x 2.</li>
-            </ul>
-            <p>Distribua esses pontos nas perícias que mais se encaixam na sua ocupação e na sua história. Lembre-se dos valores básicos de cada perícia (geralmente Atributo x 5 ou um valor fixo).</p>
-            <h3>Tabela de Perícias (Exemplo)</h3>
-            <div class="skill-table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Perícia</th>
-                            <th>Valor Base (7ª Ed.)</th>
-                            <th>Atributo Relacionado</th>
-                            <th>Descrição Breve</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Antropologia</td>
-                            <td>1%</td>
-                            <td>INT</td>
-                            <td>Estudo de culturas e sociedades humanas.</td>
-                        </tr>
-                        <tr>
-                            <td>Arqueologia</td>
-                            <td>1%</td>
-                            <td>INT</td>
-                            <td>Estudo de civilizações antigas através de artefatos.</td>
-                        </tr>
-                        <tr>
-                            <td>Arma de Fogo (Pistola)</td>
-                            <td>20%</td>
-                            <td>DES</td>
-                            <td>Habilidade com pistolas e revólveres.</td>
-                        </tr>
-                        <tr>
-                            <td>Biblioteconomia</td>
-                            <td>20%</td>
-                            <td>INT</td>
-                            <td>Habilidade de pesquisar e encontrar informações em bibliotecas.</td>
-                        </tr>
-                        </tbody>
-                </table>
+        <section class="featured-content p-4 mb-4 bg-dark-secondary rounded shadow">
+            <h2 class="text-center mb-4 text-green">Destaques da Campanha</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 bg-dark-tertiary text-light border-green shadow-sm">
+                        <div class="card-body text-center">
+                            <h3 class="card-title text-green">A Criação da Ficha</h3>
+                            <p class="card-text">Nosso guia detalhado irá te auxiliar em cada passo para construir um investigador pronto para enfrentar o desconhecido.</p>
+                            <a href="criar-investigador.html" class="btn btn-outline-primary mt-auto">Iniciar Criação</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 bg-dark-tertiary text-light border-green shadow-sm">
+                        <div class="card-body text-center">
+                            <h3 class="card-title text-green">O Mistério de Innsmouth</h3>
+                            <p class="card-text">Descubra os segredos sombrios de uma cidade isolada e seus habitantes peculiares. [Lore de Exemplo]</p>
+                            <a href="lore-e-relatorios.html#innsmouth" class="btn btn-outline-primary mt-auto">Ler Mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 bg-dark-tertiary text-light border-green shadow-sm">
+                        <div class="card-body text-center">
+                            <h3 class="card-title text-green">Diários dos Investigadores</h3>
+                            <p class="card-text">Acompanhe as aventuras e desventuras de outros investigadores enquanto eles narram suas experiências mais aterrorizantes.</p>
+                            <a href="historias-investigadores.html" class="btn btn-outline-primary mt-auto">Ver Diários</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p class="note"><strong>Dica:</strong> Pense em como suas perícias refletem sua ocupação e sua história de vida.</p>
-        </section>
-
-        <section id="passo5" class="step-section">
-            <h2>5. Equipamento e Dinheiro: O que Você Leva?</h2>
-            <p>Seu investigador começa com uma quantidade de dinheiro e pode adquirir equipamentos que fazem sentido para sua ocupação e estilo de vida.</p>
-            <h3>Crédito e Dinheiro</h3>
-            <p>Seu nível de crédito e dinheiro inicial dependem da sua ocupação. Use-o com sabedoria para adquirir itens essenciais.</p>
-            <h3>Itens Essenciais</h3>
-            <ul>
-                <li>Roupas adequadas à época e ao clima.</li>
-                <li>Documentos de identificação.</li>
-                <li>Ferramentas da sua profissão (lupa para detetive, livros para professor, etc.).</li>
-                <li>Armas (se sua ocupação permitir e você tiver treinamento).</li>
-            </ul>
-            <figure>
-                <img src="../imagens/equipamento.jpg" alt="Ilustração de equipamentos de investigador">
-                <figcaption>Prepare-se para o desconhecido.</figcaption>
-            </figure>
-        </section>
-
-        <section id="passo6" class="step-section">
-            <h2>6. Detalhes Pessoais: A Profundidade do Personagem</h2>
-            <p>Estes detalhes adicionam camadas ao seu investigador e o conectam ao mundo da campanha.</p>
-            <ul>
-                <li>**Ideologia/Crença:** O que seu personagem realmente acredita?</li>
-                <li>**Pessoas Importantes:** Quem são as pessoas mais importantes na vida dele?</li>
-                <li>**Locais Importantes:** Quais lugares são significativos para ele?</li>
-                <li>**Posses Valiosas:** Um objeto que ele valoriza.</li>
-                <li>**Traços:** Uma característica marcante (ex: "sempre pontual", "fala baixo").</li>
-                <li>**Ferimento/Cicatriz:** Um detalhe físico que conta uma história.</li>
-                <li>**Medo/Mania:** Um gatilho para perda de Sanidade.</li>
-            </ul>
-        </section>
-
-        <section id="passo7" class="step-section">
-            <h2>7. Finalização da Ficha: Tudo Pronto!</h2>
-            <p>Revise todos os detalhes da sua ficha. Certifique-se de que todos os pontos de perícia foram distribuídos e que você tem uma boa história de fundo.</p>
-            <p><strong>Parabéns!</strong> Seu investigador está pronto para enfrentar os horrores de Call of Cthulhu.</p>
-            <p class="note">Não se esqueça de preencher sua ficha oficial do sistema ou usar um modelo digital.</p>
-        </section>
-
-        <section id="regras-opcionais" class="step-section">
-            <h2>Regras Opcionais da Campanha</h2>
-            <p>O Guardião pode optar por usar algumas regras adicionais para esta campanha. Certifique-se de lê-las e entendê-las.</p>
-            <ul>
-                <li>**Regra Opcional 1:** [Breve descrição da regra]</li>
-                <li>**Regra Opcional 2:** [Breve descrição da regra]</li>
-                </ul>
-        </section>
-
-        <section id="dicas-guardiao" class="step-section">
-            <h2>Dicas do Guardião para a Criação</h2>
-            <p>Algumas sugestões diretas do Guardião para otimizar a criação do seu investigador:</p>
-            <ul>
-                <li>Pense em como seu investigador se encaixa no tema de horror cósmico.</li>
-                <li>Não tenha medo de dar fraquezas ao seu personagem; elas tornam a história mais interessante!</li>
-                <li>Se tiver dúvidas, não hesite em perguntar.</li>
-            </ul>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Sua Campanha de Call of Cthulhu</p>
+    <footer class="main-footer bg-black text-white-50 text-center py-4 mt-auto border-top border-green">
+        <p class="mb-0">&copy; 2025 O Chamado de Cthulhu: Campanha do Mistério Cósmico. Todos os direitos reservados aos horrores cósmicos.</p>
+        <p class="mb-0">Desenvolvido com o carinho do Guardião.</p>
     </footer>
 
-    <script src="../js/main.js"></script> <script src="../js/ficha-interatividade.js"></script> </body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4yFFTOmlFRlceGkMvYy/KtSoVgXhW+al/zfuP6K9d/21" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlcoVSVwzXFLtK-L3eA/wUT/8w/H8WJd4jW2Tf1" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
 </html>
