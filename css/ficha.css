@@ -1,271 +1,149 @@
 /* css/ficha.css */
 
-/* --- Layout da Página de Criação de Ficha --- */
-body.ficha-page { /* Adicione a classe 'ficha-page' ao <body> de criar-investigador.html */
-    display: flex;
-    flex-direction: row; /* Coloca sidebar e conteúdo lado a lado */
-    min-height: 100vh;
-}
+/* --- Layout da Página de Criação de Ficha (Bootstrap Flexbox) --- */
+/* O Bootstrap já tem muitas classes flexbox, como d-flex, flex-column, flex-lg-row */
+/* Aqui fazemos ajustes específicos ou sobrescrevemos pequenos detalhes */
 
 .sidebar {
-    background-color: var(--color-medium-blue);
-    width: 250px;
-    padding: 20px;
-    border-right: 2px solid var(--color-accent-gold);
-    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
-    position: sticky; /* Mantém a sidebar visível ao rolar */
+    position: sticky;
     top: 0;
     height: 100vh; /* Altura total da viewport */
     overflow-y: auto; /* Adiciona scroll se o conteúdo for muito longo */
-    flex-shrink: 0; /* Impede que a sidebar encolha */
 }
 
 .sidebar h2 {
-    color: var(--color-accent-gold);
-    margin-bottom: 1em;
-    font-size: 1.5em;
-    text-align: center;
+    color: var(--bs-green) !important;
+    font-size: 1.8em;
 }
 
-.sidebar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.sidebar li {
-    margin-bottom: 10px;
-}
-
-.sidebar a {
-    display: block;
-    padding: 8px 10px;
-    color: var(--color-light-gray);
+.sidebar .nav-link {
     font-family: var(--font-body);
-    font-size: 1em;
-    border-radius: 4px;
+    font-size: 1.1em;
+    padding: 10px 15px;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.sidebar a:hover {
-    background-color: rgba(var(--color-accent-gold), 0.2);
-    color: white;
+.sidebar .nav-link:hover {
+    background-color: rgba(var(--bs-green), 0.2) !important; /* Cor clara com transparência */
+    color: white !important;
     text-decoration: none;
 }
 
-.sidebar li.separator {
-    border-top: 1px solid rgba(var(--color-light-gray), 0.3);
-    margin: 15px 0;
-    padding: 0;
-}
-
+/* Conteúdo principal - já com classes bg-dark-tertiary */
 .content {
-    flex-grow: 1; /* Ocupa o restante do espaço */
-    padding: 30px;
-    background-color: var(--color-background-paper); /* Fundo claro para o conteúdo principal */
-    color: #333; /* Texto escuro no fundo claro */
-    box-shadow: inset 0 0 15px rgba(0,0,0,0.1);
+    /* Sem necessidade de muitos estilos aqui se o Bootstrap e style.css já cuidam de cores e paddings */
 }
 
 .step-section {
-    margin-bottom: 40px;
-    padding: 25px;
-    border: 1px solid rgba(var(--color-accent-gold), 0.3);
-    border-radius: 8px;
-    background-color: #fff; /* Fundo branco para cada passo */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Já com classes Bootstrap como p-4, mb-4, rounded, shadow, bg-dark-secondary, border, border-green */
 }
-
 .step-section h2 {
-    color: var(--color-dark-blue);
-    margin-bottom: 1em;
-    border-bottom: 2px solid var(--color-accent-gold);
-    padding-bottom: 10px;
+    color: var(--bs-green) !important;
 }
 
-.step-section figure {
-    margin: 20px 0;
-    text-align: center;
-}
-
-.step-section img {
-    max-width: 80%;
-    height: auto;
-    border-radius: 5px;
-    border: 2px solid var(--color-accent-gold);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.step-section figure img {
+    /* Já com classes Bootstrap como img-fluid, rounded, border, shadow-sm */
 }
 
 .step-section figcaption {
     font-style: italic;
-    color: #666;
-    margin-top: 10px;
-    font-size: 0.9em;
+    color: var(--bs-white-50);
 }
 
-.note {
-    font-style: italic;
-    color: #555;
-    background-color: rgba(var(--color-accent-gold), 0.1);
-    border-left: 4px solid var(--color-accent-gold);
-    padding: 10px 15px;
-    margin-top: 20px;
-    border-radius: 0 5px 5px 0;
+.note.alert {
+    /* Bootstrap já cuida de .alert, .alert-warning/.alert-info */
+    /* Apenas garanta que .text-dark-blue foi definida em style.css */
+    color: var(--bs-dark) !important; /* Força o texto escuro */
+    background-color: var(--bs-warning) !important; /* Exemplo: Alert amarelo para "Dica" */
+    border-color: var(--bs-green) !important;
 }
+.note.alert-info { /* Para o alerta de finalização */
+    background-color: rgba(0, 255, 0, 0.1) !important; /* Um verde bem suave para fundo */
+    color: var(--bs-green) !important;
+    border-color: var(--bs-green) !important;
+}
+
 
 /* --- Tabelas de Atributos e Perícias --- */
-.attribute-table-container, .skill-table-container {
-    overflow-x: auto; /* Permite scroll horizontal em telas pequenas */
-    margin: 20px 0;
+/* As classes Bootstrap .table, .table-dark, .table-striped, .table-bordered já dão um ótimo estilo */
+.table th, .table td {
+    padding: 12px; /* Ajuste o padding se quiser mais espaço */
+    color: var(--bs-light-gray); /* Garante texto claro nas tabelas escuras */
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 1.5em;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* Linhas zebradas para tabela escura */
+.table-dark.table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: var(--bs-dark-secondary) !important;
 }
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 10px 12px;
-    text-align: left;
-    color: #333;
-}
-
-th {
-    background-color: var(--color-medium-blue);
-    color: white;
-    font-family: var(--font-heading);
-    text-transform: uppercase;
-    font-size: 0.9em;
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2;
+.table-dark.table-striped > tbody > tr:nth-of-type(even) > * {
+    background-color: var(--bs-dark-tertiary) !important;
 }
 
 /* --- Calculadora de Pontos Derivados --- */
 .derived-points-calculator {
-    background-color: #e6e6e6;
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 5px;
-    margin-top: 20px;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    /* Já com classes Bootstrap como p-4, rounded, bg-dark-tertiary, border, border-secondary */
 }
 
 .derived-points-calculator label {
-    display: inline-block;
-    width: 80px;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: var(--color-dark-blue);
+    color: var(--bs-green) !important; /* Label em verde */
 }
 
 .derived-points-calculator input[type="number"] {
-    width: 100px;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #aaa;
-    border-radius: 4px;
-    font-size: 1em;
-    color: #333;
+    background-color: var(--bs-dark); /* Fundo escuro para input */
+    color: var(--bs-light-gray); /* Texto claro para input */
+    border: 1px solid var(--bs-green); /* Borda verde */
+}
+.derived-points-calculator input[type="number"]:focus {
+    border-color: var(--bs-green-dark);
+    box-shadow: 0 0 0 0.25rem rgba(0, 255, 0, 0.25); /* Sombra verde no focus */
+    background-color: var(--bs-dark-secondary);
 }
 
-.derived-points-calculator button {
-    background-color: var(--color-dark-blue);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: var(--font-heading);
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-}
-
-.derived-points-calculator button:hover {
-    background-color: var(--color-accent-gold);
-    color: var(--color-dark-blue);
-}
-
-.derived-points-calculator p {
-    margin-top: 10px;
-    font-size: 1.1em;
-    color: #333;
-}
-
-.derived-points-calculator p span {
-    font-weight: bold;
-    color: var(--color-dark-blue);
-}
 
 /* --- Lista de Ocupações na Página de Ficha --- */
-ul.occupation-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.list-group-item {
+    transition: background-color 0.2s ease, border-color 0.2s ease;
 }
-
-ul.occupation-list li {
-    margin-bottom: 5px;
-}
-
-ul.occupation-list a {
-    color: var(--color-dark-blue); /* Links escuros no fundo claro */
-    font-weight: bold;
-}
-
-ul.occupation-list a:hover {
-    color: var(--color-accent-gold);
+.list-group-item.bg-dark-tertiary:hover {
+    background-color: var(--bs-green-dark) !important; /* Fundo verde ao hover */
+    color: var(--bs-black) !important; /* Texto preto ao hover */
+    border-color: var(--bs-green-dark) !important;
 }
 
 
 /* --- Media Queries para Responsividade da Ficha --- */
 @media (max-width: 992px) {
-    body.ficha-page {
-        flex-direction: column; /* Sidebar empilha em telas menores */
-    }
     .sidebar {
-        width: 100%;
+        position: relative; /* Não mais sticky em telas menores */
         height: auto; /* Altura automática */
-        position: relative; /* Não mais sticky */
-        border-right: none;
-        border-bottom: 2px solid var(--color-accent-gold);
-        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        border-right: none !important;
+        border-bottom: 2px solid var(--bs-green) !important;
+        box-shadow: none !important;
+        width: 100% !important; /* Ocupa toda a largura */
     }
-    .sidebar ul {
-        display: flex;
-        flex-wrap: wrap;
+    .sidebar .nav {
+        flex-direction: row !important; /* Links da sidebar em linha */
         justify-content: center;
+        flex-wrap: wrap;
     }
-    .sidebar li {
+    .sidebar .nav-item {
         margin: 5px 10px;
     }
     .content {
         padding: 20px;
     }
-    .step-section {
-        padding: 20px;
-    }
-    .step-section img {
-        max-width: 95%;
-    }
 }
 
 @media (max-width: 576px) {
     .step-section h2 {
-        font-size: 1.8em;
-    }
-    .attribute-table-container, .skill-table-container {
-        font-size: 0.9em;
+        font-size: 1.8em !important;
     }
     .derived-points-calculator input[type="number"] {
-        width: 80px;
+        width: 100% !important; /* Inputs em largura total em telas muito pequenas */
+        display: block !important;
     }
     .derived-points-calculator label {
-        width: 60px;
+        display: block !important;
+        width: auto !important;
     }
 }
